@@ -12,9 +12,9 @@ public class DataGenerator {
     }
 
     public static class Registration {
-        public static String name(String locale) {
+        public static String generateName(String locale) {
             Faker faker = new Faker(new Locale("ru"));
-            return new String(faker.name().lastName() + " " + faker.name().firstName());
+            return faker.name().lastName() + " " + faker.name().firstName();
         }
 
 
@@ -22,18 +22,14 @@ public class DataGenerator {
             return LocalDate.now().plusDays(shift).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         }
 
-        public static String phone(String locale) {
+        public static String generatePhone(String locale) {
             Faker faker = new Faker(new Locale("ru"));
-            return new String(
-                    faker.phoneNumber().phoneNumber()
-            );
+            return faker.phoneNumber().phoneNumber();
         }
 
-        public static String city(String ru) {
+        public static String generateCity(String ru) {
             Faker faker = new Faker(new Locale("ru"));
-            return new String(
-                    faker.address().city()
-            );
+            return faker.address().city();
         }
 
         private Registration() {
