@@ -48,7 +48,7 @@ public class CardDeliveryChangeDataTest {
         $("[data-test-id=replan-notification]").shouldHave(text
                 ("У вас уже запланирована встреча на другую дату. Перепланировать?"));
         $("[data-test-id=replan-notification] button.button").click();
-        $("[data-test-id='success-notification']").shouldBe(visible).
+        $("[data-test-id='success-notification']").
                 shouldHave(exactText("Успешно!\n" + "Встреча успешно запланирована на " + dateSecond));
 
     }
