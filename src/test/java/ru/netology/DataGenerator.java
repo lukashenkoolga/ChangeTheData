@@ -27,12 +27,17 @@ public class DataGenerator {
             return faker.phoneNumber().phoneNumber();
         }
 
-        public static String generateCity(String ru) {
-            Faker faker = new Faker(new Locale("ru"));
-            return faker.address().city();
+        }
+        public static String generateValidCity() {
+            String[] cities = new String[]{"Москва", "Санкт-Петербург", "Новосибирск", "Краснодар", "Екатеринбург"};
+            int itemIndex = (int) (Math.random() * cities.length);
+            return cities[itemIndex];
         }
 
-        private Registration() {
+        public static String generateInvalidCity() {
+            String[] cities = new String[]{"Тайшет", "Киренск", "Благовещенск", "Канск", "Зеленогорск"};
+            int itemIndex = (int) (Math.random() * cities.length);
+            return cities[itemIndex];
         }
+
     }
-}

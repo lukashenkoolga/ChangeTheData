@@ -33,7 +33,7 @@ public class CardDeliveryChangeDataTest {
     public void shouldSentForm() {
         String dateFirst = DataGenerator.Registration.getDate(4);
         String dateSecond = DataGenerator.Registration.getDate(20);
-        $("[data-test-id=city] input").setValue(DataGenerator.Registration.generateCity("ru"));
+        $("[data-test-id=city] input").setValue(DataGenerator.generateValidCity());
         $("[data-test-id = date] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id = date] input").setValue(dateFirst);
         $("[data-test-id=name] input").setValue(DataGenerator.Registration.generateName("ru"));
@@ -57,7 +57,7 @@ public class CardDeliveryChangeDataTest {
     @Test
     public void shouldSentInvalidCity() {
         String dateFirst = DataGenerator.Registration.getDate(4);
-        $("[data-test-id=city] input").setValue("Тайшет");
+        $("[data-test-id=city] input").setValue(DataGenerator.generateInvalidCity());
         $("[data-test-id = date] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id = date] input").setValue(dateFirst);
         $("[data-test-id=name] input").setValue(DataGenerator.Registration.generateName("ru"));
@@ -69,10 +69,11 @@ public class CardDeliveryChangeDataTest {
 
     }
 
+
     @Test
     public void shouldSentInvalidData() {
         String dateFirst = DataGenerator.Registration.getDate(4);
-        $("[data-test-id=city] input").setValue(DataGenerator.Registration.generateCity("ru"));
+        $("[data-test-id=city] input").setValue(DataGenerator.generateValidCity());
         $("[data-test-id = date] input").doubleClick().sendKeys("12.01.2021");
         $("[data-test-id = date] input").setValue(dateFirst);
         $("[data-test-id=name] input").setValue(DataGenerator.Registration.generateName("ru"));
@@ -87,7 +88,7 @@ public class CardDeliveryChangeDataTest {
     @Test
     public void shouldSentInvalidName() {
         String dateFirst = DataGenerator.Registration.getDate(4);
-        $("[data-test-id=city] input").setValue(DataGenerator.Registration.generateCity("ru"));
+        $("[data-test-id=city] input").setValue(DataGenerator.generateValidCity());
         $("[data-test-id = date] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id = date] input").setValue(dateFirst);
         $("[data-test-id=name] input").setValue("Ivanov Ivan");
@@ -103,7 +104,7 @@ public class CardDeliveryChangeDataTest {
     public void shouldSentInvalidPhone() {
         String dateFirst = DataGenerator.Registration.getDate(4);
         String dateSecond = DataGenerator.Registration.getDate(20);
-        $("[data-test-id=city] input").setValue(DataGenerator.Registration.generateCity("ru"));
+        $("[data-test-id=city] input").setValue(DataGenerator.generateValidCity());
         $("[data-test-id = date] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id = date] input").setValue(dateFirst);
         $("[data-test-id=name] input").setValue(DataGenerator.Registration.generateName("ru"));
@@ -118,7 +119,7 @@ public class CardDeliveryChangeDataTest {
     public void shouldSentInactiveCheckbox() {
         String dateFirst = DataGenerator.Registration.getDate(4);
         String dateSecond = DataGenerator.Registration.getDate(20);
-        $("[data-test-id=city] input").setValue(DataGenerator.Registration.generateCity("ru"));
+        $("[data-test-id=city] input").setValue(DataGenerator.generateValidCity());
         $("[data-test-id = date] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id = date] input").setValue(dateFirst);
         $("[data-test-id=name] input").setValue(DataGenerator.Registration.generateName("ru"));
